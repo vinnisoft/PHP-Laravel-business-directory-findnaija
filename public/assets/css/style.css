@@ -1,0 +1,396 @@
+a {
+    text-decoration: none !important;
+}
+
+label.error {
+    color: #ff0000;
+    /* font-weight: bold; */
+}
+
+table#dataTableBuilder {
+    width: 100% !important;
+}
+
+.dataTables_paginate a {
+    border: 1px solid #80808045;
+    color: #808080;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+a.paginate_button.current {
+    background: #009245 !important;
+    border-color: #009245 !important;
+    color: white;
+}
+
+.dataTables_paginate a:hover {
+    color: #7288c4;
+}
+
+input[type="search"] {
+    border: 1px solid #80808045;
+    border-radius: 5px;
+    padding: 8px;
+    outline: none;
+    height: calc(1.8125rem + 2px);
+    font-size: .875rem;
+    line-height: 1.5;
+}
+
+a.dt-button {
+    color: #fff !important;
+    background: #009245 !important;
+    border-color: #009245 !important;
+    font-size: .8rem !important;
+    font-weight: 500 !important;
+    border: 1px solid transparent !important;
+    border-radius: 0.25rem !important;
+}
+
+.dataTables_length label select {
+    display: inline-block;
+    width: 100%;
+    height: calc(1.8125rem + 2px);
+    padding: .375rem 1.75rem .375rem .75rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    vertical-align: middle;
+    background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right .75rem center/8px 10px;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    appearance: none;
+    outline: none;
+}
+
+div.dataTables_length {
+    margin-bottom: -40px;
+}
+
+img.preview-images {
+    width: 150px;
+    height: 150px;
+    padding: 5px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 56px;
+    height: 20px;
+    padding: 3px;
+    background-color: white;
+    border-radius: 18px;
+    box-shadow: inset 0 -1px white, inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    background-image: -webkit-linear-gradient(top, #eeeeee, white 25px);
+    background-image: -moz-linear-gradient(top, #eeeeee, white 25px);
+    background-image: -o-linear-gradient(top, #eeeeee, white 25px);
+    background-image: linear-gradient(to bottom, #eeeeee, white 25px);
+}
+
+.switch-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.switch-label {
+    position: relative;
+    display: block;
+    height: inherit;
+    font-size: 10px;
+    text-transform: uppercase;
+    background: #eceeef;
+    border-radius: inherit;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.15);
+    -webkit-transition: 0.15s ease-out;
+    -moz-transition: 0.15s ease-out;
+    -o-transition: 0.15s ease-out;
+    transition: 0.15s ease-out;
+    -webkit-transition-property: opacity background;
+    -moz-transition-property: opacity background;
+    -o-transition-property: opacity background;
+    transition-property: opacity background;
+}
+
+.switch-label:before,
+.switch-label:after {
+    position: absolute;
+    top: 50%;
+    margin-top: -.5em;
+    line-height: 1;
+    -webkit-transition: inherit;
+    -moz-transition: inherit;
+    -o-transition: inherit;
+    transition: inherit;
+}
+
+.switch-label:before {
+    content: attr(data-off);
+    right: 11px;
+    color: #aaa;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.switch-label:after {
+    content: attr(data-on);
+    left: 11px;
+    color: white;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+}
+
+.switch-input:checked~.switch-label {
+    background: #009245;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), inset 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.switch-input:checked~.switch-label:before {
+    opacity: 0;
+}
+
+.switch-input:checked~.switch-label:after {
+    opacity: 1;
+}
+
+.switch-handle {
+    position: absolute;
+    top: 5px;
+    left: 6px;
+    width: 18px;
+    height: 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    -webkit-transition: left 0.15s ease-out;
+    -moz-transition: left 0.15s ease-out;
+    -o-transition: left 0.15s ease-out;
+    transition: left 0.15s ease-out;
+}
+
+.switch-handle:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -6px 0 0 -6px;
+    width: 12px;
+    height: 12px;
+    background: #f9f9f9;
+    border-radius: 6px;
+    box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
+}
+
+.switch-input:checked~.switch-handle {
+    left: 32px;
+    box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.switch-green>.switch-input:checked~.switch-label {
+    background: #009245;
+}
+
+div#dataTableBuilder_paginate {
+    margin-top: -20px;
+}
+
+.select2-selection {
+    margin-top: 2px !important;
+}
+
+.select2-container--default .select2-selection--multiple {
+    border: 1px solid #ced4da !important;
+    border-radius: 0.25rem !important;
+}
+
+.select2-container .select2-selection--multiple {
+    min-height: 35px !important;
+}
+
+span.select2-selection.select2-selection--single {
+    height: 36px;
+    padding: 5px 0px;
+}
+
+input[type=submit] {
+    width: 160px;
+}
+
+.information {
+    width: 100%;
+    background: #8080802b;
+    padding: 10px 0px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+span.business-service {
+    font-weight: bold;
+    font-size: 16px;
+    padding-right: 40px;
+    color: #009245;
+}
+
+.badge {
+    font-size: 15px;
+}
+.photo-gallery {
+    color: #313437;
+    background-color: #fff;
+}
+.photo-gallery .photos {
+    padding-top: 10px;
+}
+.photo-gallery p {
+    color: #7d8285;
+}
+
+.photo-gallery h2 {
+    font-weight: bold;
+    margin-bottom: 40px;
+    padding-top: 40px;
+    color: inherit;
+}
+
+.lb-outerContainer {
+    width: 600px !important;
+    height: 300px !important;
+}
+
+img.lb-image {
+    width: 100% !important;
+    height: 292px !important;
+}
+
+@media (max-width:767px) {
+    .photo-gallery h2 {
+        margin-bottom: 25px;
+        padding-top: 25px;
+        font-size: 24px;
+    }
+}
+
+.photo-gallery .intro {
+    font-size: 16px;
+    max-width: 500px;
+    margin: 0 auto 40px;
+}
+
+.photo-gallery .intro p {
+    margin-bottom: 0;
+}
+
+.yellow-star {
+    color: #ffa200;
+}
+
+td.user-image img {
+    border-radius: 50%;
+    height: 50px;
+}
+
+.width100 {
+    width: 200px;
+}
+
+.days label {
+    text-transform: capitalize;
+}
+
+.table>:not(:last-child)>:last-child>* {
+    border-bottom-color: #fff !important;
+}
+
+.approve {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 10px 0px;
+    border-radius: 5px;
+}
+
+.approve label {
+    padding-top: 4px;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.select-with-icon {
+    position: relative;
+}
+
+.select-with-icon select {
+    padding-right: 30px; /* Adjust the value based on the icon size */
+}
+
+.select-with-icon i {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Adjust the value based on the desired space from the right */
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+
+#ckeditor {
+    width: 1000px;
+    margin: 20px auto;
+}
+.ck-editor__editable[role="textbox"] {
+    min-height: 200px;
+}
+.ck-content .image {
+    max-width: 80%;
+    margin: 20px auto;
+}
+
+/* span.removeImage {
+    position: relative;
+    right: 62px;
+    bottom: 49px;
+    cursor: pointer;
+    padding: 4px !important;
+} */
+
+
+.business-images {
+    position: relative;
+    bottom: 138px;
+    left: 100px;
+}
+
+.cover-icon {
+    position: relative;
+    right: 38px;
+    bottom: 32px;
+    padding: 3px 6px;
+    background: #636060;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.select2-container .select2-results__option {
+    white-space: normal !important; /* Allow options to wrap */
+}
+
+.select2-container .select2-dropdown {
+    max-height: 200px !important; /* Adjust this height as needed */
+    overflow-y: auto !important;
+}
+
+.select2-container--default .select2-selection--multiple {
+    max-height: 100px !important; /* Adjust this height as needed */
+    overflow-y: auto !important;
+}
+
+.select2-container .select2-selection--multiple .select2-selection__rendered {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    margin-bottom: 0 !important;
+}

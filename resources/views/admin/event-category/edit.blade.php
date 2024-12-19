@@ -1,0 +1,79 @@
+@extends('admin.layout.master')
+@section('content')
+    <div class="app-main__inner">
+        <div class="app-page-title">
+            <div class="page-title-wrapper">
+                <div class="page-title-heading">
+                    <div class="page-title-icon">
+                        <i class="metismenu-icon pe-7s-edit"></i>
+                    </div>
+                    <div>Update Event Category</div>
+                </div>
+                <div class="page-title-actions">
+                    <a href="{{ route('event-category.index') }}" class="btn-shadow btn btn-info"><span
+                            class="btn-icon-wrapper pr-2 opacity-7"><i
+                                class="fa fa-backward fa-w-20"></i></span>Back</a>
+                </div>
+            </div>
+        </div>
+        <div class="main-card mb-3 card">
+            <div class="card-body">
+                <h5 class="card-title">Category Detail</h5>
+                {{ Form::open(['url' => route('event-category.update', $eventcategory->id), 'id' => 'updateEventCategoryForm', 'enctype' => 'multipart/form-data']) }}
+                @method('PUT')
+                <div class="form-row">
+                    <div class="col-md-12">
+                        <div class="position-relative form-group">
+                            {!! Form::label('name', 'Name') !!}
+                            {!! Form::text('name', $eventcategory->name, ['class' => 'form-control', 'placeholder' => 'Enter name']) !!}
+                        </div>
+                    </div>                    
+                </div>                
+                {!! Form::submit('Update', ['class' => 'mt-2 btn btn-primary', 'id' => 'updateEventCategoryFormBtn']) !!}
+                {!! Form::close() !!}
+            </div>
+        </div>
+    </div>
+@endsection
+@push('customScript')
+    @include('admin.event-category.script')
+    <script>
+        $("#updateEventCategoryForm").validate({
+            rules: {
+                name: {
+                    required: true
+                },
+            },
+            messages: {
+                name: {
+                    required: "Please enter name!"
+                },
+            },
+            submitHandler: function(form) {
+                var formData = new FormData(form);
+                $('#updateEventCategoryFormBtn').html('Processing');
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                    },
+                    type: 'POST',
+                    url: "{{ route('event-category.update', $eventcategory->id) }}",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    dataType: 'json',
+                    success: function(data) {
+                        if (data.status == true) {
+                            $('#updateEventCategoryFormBtn').html('Add');
+                            window.location.href = "{{ route('event-category.index') }}";
+                        } else {
+                            toastr.error(data.message);
+                            $('#updateEventCategoryFormBtn').html('Add');
+                            $('#errorMsg').html(data.msg);
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+@endpush
